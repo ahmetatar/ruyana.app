@@ -1,0 +1,962 @@
+<!DOCTYPE html>
+<html lang="tr" data-lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ruyana — Gizlilik Politikası &amp; Kullanım Koşulları | Privacy &amp; Terms</title>
+  <meta name="description" content="Ruyana — kişisel estetik günlüğü. Gizlilik Politikası ve Kullanım Koşulları. Verileriniz cihazınızda ve sizin özel iCloud hesabınızda kalır; biz toplamayız. / Privacy Policy and Terms of Use for Ruyana — a private aesthetic journal. Data Not Collected.">
+  <meta name="author" content="Ahmet Atar">
+  <meta name="color-scheme" content="light dark">
+  <meta name="theme-color" content="#FAF3EA" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#1C1714" media="(prefers-color-scheme: dark)">
+  <link rel="canonical" href="https://ruyana.app/">
+
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Ruyana — Gizlilik Politikası &amp; Kullanım Koşulları">
+  <meta property="og:description" content="Verileriniz cihazınızda ve sizin özel iCloud hesabınızda kalır. Biz toplamayız — Data Not Collected.">
+  <meta name="twitter:card" content="summary">
+
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%23B0543E'/%3E%3Cstop offset='1' stop-color='%23D99A5B'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='32' height='32' rx='9' fill='%23FAF3EA'/%3E%3Ccircle cx='16' cy='16' r='8.5' fill='url(%23g)'/%3E%3Ccircle cx='13' cy='13' r='2.2' fill='%23FFF8F2' opacity='0.85'/%3E%3C/svg%3E">
+
+  <!-- Set language before paint to avoid a flash of both languages -->
+  <script>
+    (function () {
+      try {
+        var stored = localStorage.getItem("ruyana-lang");
+        var nav = (navigator.language || "").toLowerCase();
+        var lang = stored || (nav.indexOf("en") === 0 ? "en" : "tr");
+        document.documentElement.setAttribute("data-lang", lang);
+        document.documentElement.lang = lang;
+      } catch (e) {
+        document.documentElement.setAttribute("data-lang", "tr");
+      }
+    })();
+  </script>
+
+  <style>
+    :root {
+      color-scheme: light dark;
+
+      /* --- Ruyana tokens (light) --- */
+      --primary: #B0543E;
+      --primary-pressed: #9C4A33;
+      --secondary: #96603C;
+      --background: #FAF3EA;
+      --surface: #FFFBF5;
+      --surface-elevated: #FFFEFB;
+      --on-primary: #FFF8F2;
+      --on-background: #3A2A22;
+      --on-surface: #3A2A22;
+      --on-surface-muted: #7A6253;
+      --border: #ECDFCF;
+      --border-focus: #B0543E;
+      --error: #B3261E;
+      --warning: #9A6406;
+      --success: #3F7A4E;
+      --info: #3E6E8E;
+      --champagne: #D99A5B;
+
+      --grad-brand: linear-gradient(135deg, #B0543E 0%, #96603C 100%);
+      --grad-shimmer: linear-gradient(120deg, #B0543E 0%, #D99A5B 100%);
+
+      --shadow-card: 0 2px 10px rgba(74, 51, 38, 0.10);
+      --shadow-panel: 0 18px 48px rgba(74, 51, 38, 0.16);
+      --glow: 0 6px 18px rgba(176, 84, 62, 0.28);
+      --scrim: rgba(58, 42, 34, 0.40);
+
+      --r-sm: 8px;
+      --r-md: 14px;
+      --r-lg: 20px;
+      --r-xl: 28px;
+      --r-full: 999px;
+
+      --max-width: 1160px;
+      --ease: cubic-bezier(0.16, 1, 0.3, 1);
+
+      --serif: ui-serif, "New York", "Iowan Old Style", Georgia, "Times New Roman", serif;
+      --sans: -apple-system, BlinkMacSystemFont, "SF Pro Text", system-ui, "Segoe UI", Roboto, sans-serif;
+      --mono: ui-monospace, "SF Mono", "SFMono-Regular", Menlo, Consolas, monospace;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --primary: #E2926E;
+        --primary-pressed: #C97A57;
+        --secondary: #D0A074;
+        --background: #1C1714;
+        --surface: #251F1A;
+        --surface-elevated: #2F2820;
+        --on-primary: #2A1C14;
+        --on-background: #F2E7DA;
+        --on-surface: #F2E7DA;
+        --on-surface-muted: #B5A294;
+        --border: #4C4238;
+        --border-focus: #E2926E;
+        --error: #E66A5E;
+        --warning: #E0A53C;
+        --success: #6FB07A;
+        --info: #6FA6C8;
+        --champagne: #F0C79A;
+
+        --grad-brand: linear-gradient(135deg, #E2926E 0%, #D0A074 100%);
+        --grad-shimmer: linear-gradient(120deg, #E2926E 0%, #F0C79A 100%);
+
+        --shadow-card: 0 2px 10px rgba(0, 0, 0, 0.30);
+        --shadow-panel: 0 18px 48px rgba(0, 0, 0, 0.44);
+        --glow: 0 6px 18px rgba(226, 146, 110, 0.30);
+        --scrim: rgba(0, 0, 0, 0.50);
+      }
+    }
+
+    /* --- Bilingual toggle --- */
+    html[data-lang="tr"] [lang="en"] { display: none !important; }
+    html[data-lang="en"] [lang="tr"] { display: none !important; }
+
+    * { box-sizing: border-box; }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 104px;
+      -webkit-text-size-adjust: 100%;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      font-family: var(--sans);
+      color: var(--on-background);
+      line-height: 1.72;
+      background:
+        radial-gradient(circle at 0% 0%, rgba(217, 154, 91, 0.16), transparent 30%),
+        radial-gradient(circle at 100% 8%, rgba(176, 84, 62, 0.10), transparent 26%),
+        var(--background);
+      background-attachment: fixed;
+      text-rendering: optimizeLegibility;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a { color: var(--primary); text-decoration: none; transition: color 160ms var(--ease); }
+    a:hover, a:focus-visible { color: var(--primary-pressed); }
+
+    :focus-visible {
+      outline: 2px solid var(--border-focus);
+      outline-offset: 3px;
+      border-radius: 6px;
+    }
+
+    /* Reading progress */
+    .progress {
+      position: fixed; top: 0; left: 0;
+      height: 3px; width: 100%;
+      transform: scaleX(0); transform-origin: 0 50%;
+      background: var(--grad-shimmer);
+      z-index: 50;
+    }
+
+    .skip-link {
+      position: fixed; top: 12px; left: 12px; z-index: 60;
+      padding: 10px 16px; border-radius: var(--r-full);
+      background: var(--surface-elevated); border: 1px solid var(--border);
+      color: var(--on-surface); box-shadow: var(--shadow-card);
+      transform: translateY(-150%); transition: transform 180ms var(--ease);
+    }
+    .skip-link:focus { transform: translateY(0); }
+
+    .shell {
+      width: min(calc(100% - 32px), var(--max-width));
+      margin: 0 auto;
+      padding: 18px 0 72px;
+      position: relative;
+      z-index: 1;
+    }
+
+    /* Topbar */
+    .topbar {
+      display: flex; align-items: center; justify-content: space-between;
+      gap: 16px; padding: 12px 16px 12px 18px;
+      border: 1px solid var(--border);
+      border-radius: var(--r-full);
+      background: color-mix(in srgb, var(--surface) 82%, transparent);
+      backdrop-filter: blur(18px); -webkit-backdrop-filter: blur(18px);
+      position: sticky; top: 12px; z-index: 40;
+      box-shadow: var(--shadow-card);
+    }
+
+    .brand { display: flex; align-items: center; gap: 13px; min-width: 0; }
+    .brand-mark {
+      position: relative; width: 30px; height: 30px; border-radius: 50%;
+      background: var(--grad-brand); box-shadow: var(--glow); flex: 0 0 auto;
+    }
+    .brand-mark::before {
+      content: ""; position: absolute; inset: -3px; border-radius: 50%;
+      padding: 2px; background: var(--grad-shimmer);
+      -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+      -webkit-mask-composite: xor; mask-composite: exclude; opacity: 0.9;
+    }
+    .brand-mark::after {
+      content: ""; position: absolute; top: 7px; left: 7px;
+      width: 7px; height: 7px; border-radius: 50%;
+      background: var(--on-primary); opacity: 0.85;
+    }
+    .brand-text { min-width: 0; }
+    .brand-kicker {
+      display: block; color: var(--on-surface-muted);
+      font-size: 0.72rem; letter-spacing: 0.16em; text-transform: uppercase;
+      margin-bottom: 1px;
+    }
+    .brand-title {
+      display: block; font-family: var(--serif);
+      font-size: 1.12rem; font-weight: 600; letter-spacing: -0.01em;
+      white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+    }
+
+    .topbar-actions { display: flex; align-items: center; gap: 10px; }
+
+    /* Language switch */
+    .lang-switch {
+      display: inline-flex; padding: 3px; gap: 2px;
+      border: 1px solid var(--border); border-radius: var(--r-full);
+      background: var(--surface-elevated);
+    }
+    .lang-switch button {
+      border: none; cursor: pointer; padding: 6px 12px;
+      border-radius: var(--r-full); background: transparent;
+      color: var(--on-surface-muted); font: 600 0.82rem var(--sans);
+      letter-spacing: 0.04em; transition: 160ms var(--ease);
+    }
+    html[data-lang="tr"] .lang-switch button[data-set="tr"],
+    html[data-lang="en"] .lang-switch button[data-set="en"] {
+      background: var(--grad-brand); color: var(--on-primary); box-shadow: var(--shadow-card);
+    }
+
+    .menu-toggle {
+      display: none; align-items: center; justify-content: center;
+      width: 42px; height: 42px; border: 1px solid var(--border);
+      border-radius: 12px; background: var(--surface-elevated);
+      color: var(--on-surface); cursor: pointer; padding: 0;
+    }
+    .menu-toggle svg { width: 20px; height: 20px; }
+
+    .nav { display: flex; flex-wrap: wrap; gap: 6px; justify-content: flex-end; }
+    .nav a {
+      padding: 8px 13px; border-radius: var(--r-full);
+      border: 1px solid transparent; color: var(--on-surface-muted);
+      font-size: 0.92rem; white-space: nowrap; transition: 160ms var(--ease);
+    }
+    .nav a:hover, .nav a:focus-visible {
+      border-color: var(--border); background: var(--surface-elevated); color: var(--on-surface);
+    }
+    .nav a[aria-current="true"] {
+      color: var(--primary); border-color: color-mix(in srgb, var(--primary) 30%, transparent);
+      background: color-mix(in srgb, var(--primary) 8%, transparent);
+    }
+
+    /* Card primitive */
+    .card {
+      position: relative; border: 1px solid var(--border);
+      border-radius: var(--r-xl); background: var(--surface);
+      box-shadow: var(--shadow-card);
+    }
+
+    /* Hero */
+    .hero {
+      display: grid; grid-template-columns: minmax(0, 1.16fr) minmax(300px, 0.84fr);
+      gap: 22px; padding: 34px 0 26px; align-items: stretch;
+    }
+    .hero-card {
+      position: relative; overflow: hidden; padding: 40px;
+      min-height: 380px; display: flex; flex-direction: column; justify-content: space-between;
+      border: 1px solid var(--border); border-radius: var(--r-xl);
+      background:
+        radial-gradient(circle at 90% 0%, color-mix(in srgb, var(--champagne) 22%, transparent), transparent 38%),
+        radial-gradient(circle at 0% 100%, color-mix(in srgb, var(--primary) 12%, transparent), transparent 40%),
+        var(--surface);
+      box-shadow: var(--shadow-panel);
+    }
+    .hero-card::after {
+      content: ""; position: absolute; right: -130px; bottom: -160px;
+      width: 380px; height: 380px; border-radius: 50%;
+      background: radial-gradient(circle, color-mix(in srgb, var(--primary) 14%, transparent), transparent 68%);
+      pointer-events: none;
+    }
+
+    .eyebrow {
+      display: inline-flex; align-items: center; gap: 9px; width: fit-content;
+      padding: 9px 14px; border-radius: var(--r-full);
+      border: 1px solid color-mix(in srgb, var(--primary) 26%, transparent);
+      background: color-mix(in srgb, var(--primary) 8%, transparent);
+      color: var(--primary); font-size: 0.78rem; font-weight: 600;
+      letter-spacing: 0.08em; text-transform: uppercase;
+    }
+    .eyebrow .dot {
+      width: 8px; height: 8px; border-radius: 50%; background: var(--grad-brand);
+      box-shadow: var(--glow); animation: pulse 2.6s var(--ease) infinite;
+    }
+    @keyframes pulse { 0%,100% { opacity: 1; transform: scale(1); } 50% { opacity: 0.5; transform: scale(0.74); } }
+
+    h1, h2, h3 { margin: 0; font-family: var(--serif); letter-spacing: -0.02em; line-height: 1.12; }
+    h1 {
+      font-size: clamp(2.5rem, 5.2vw, 3.9rem); font-weight: 600;
+      max-width: 15ch; margin-top: 22px; color: var(--on-surface);
+    }
+    .hero-copy { margin: 18px 0 0; max-width: 54ch; color: var(--on-surface-muted); font-size: 1.05rem; }
+
+    .hero-meta { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 24px; }
+    .meta-pill {
+      padding: 9px 14px; border-radius: var(--r-full);
+      border: 1px solid var(--border); background: var(--surface-elevated);
+      color: var(--on-surface); font-size: 0.84rem;
+    }
+    .meta-pill b { font-family: var(--mono); font-weight: 500; font-size: 0.82rem; }
+
+    .hero-stats { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; margin-top: 30px; }
+    .stat {
+      padding: 15px 16px; border-radius: var(--r-md);
+      border: 1px solid var(--border); background: var(--surface-elevated);
+    }
+    .stat .label {
+      display: block; color: var(--on-surface-muted); font-size: 0.72rem;
+      text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 7px;
+    }
+    .stat .value { display: block; color: var(--on-surface); font-size: 0.95rem; font-weight: 600; }
+
+    .hero-side { display: grid; gap: 18px; }
+    .side-card { padding: 24px; }
+    .side-card h2 { font-size: 1.28rem; font-weight: 600; margin-bottom: 12px; color: var(--on-surface); }
+    .side-card p, .side-card li { color: var(--on-surface-muted); }
+    .side-card ul { margin: 0; padding-left: 18px; }
+    .side-card li + li { margin-top: 7px; }
+    .side-card li::marker { color: var(--primary); }
+
+    .chips { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 14px; }
+    .chip {
+      padding: 7px 12px; border-radius: var(--r-full);
+      border: 1px solid color-mix(in srgb, var(--secondary) 26%, transparent);
+      background: color-mix(in srgb, var(--secondary) 8%, transparent);
+      color: var(--secondary); font-size: 0.82rem; font-weight: 500;
+    }
+
+    /* Body grid */
+    .section-grid { display: grid; grid-template-columns: minmax(0, 1fr) 312px; gap: 22px; }
+    .content { display: grid; gap: 22px; }
+
+    .section { padding: 30px 34px; scroll-margin-top: 100px; }
+    .section-tag {
+      display: inline-block; margin-bottom: 14px; padding: 5px 11px;
+      border-radius: var(--r-full); border: 1px solid var(--border);
+      background: var(--surface-elevated); color: var(--on-surface-muted);
+      font-size: 0.7rem; letter-spacing: 0.12em; text-transform: uppercase;
+    }
+    .section h2 { font-size: clamp(1.6rem, 2.8vw, 2.05rem); font-weight: 600; margin-bottom: 10px; color: var(--on-surface); }
+    .section h3 {
+      font-family: var(--sans); font-size: 1.06rem; font-weight: 600;
+      letter-spacing: 0; margin-top: 26px; margin-bottom: 9px;
+      scroll-margin-top: 100px; color: var(--on-surface);
+    }
+    .section h3 .anchor {
+      opacity: 0; margin-left: 7px; color: var(--on-surface-muted); font-weight: 400;
+      transition: opacity 160ms var(--ease), color 160ms var(--ease);
+    }
+    .section h3:hover .anchor { opacity: 1; }
+    .section h3 .anchor:hover { color: var(--primary); }
+
+    .section p, .section li { color: var(--on-surface-muted); margin: 0; }
+    .section p + p { margin-top: 13px; }
+    .section ul { margin: 11px 0 0; padding-left: 20px; }
+    .section li + li { margin-top: 7px; }
+    .section li::marker { color: var(--primary); }
+    .section-intro { color: var(--on-surface); max-width: 66ch; font-size: 1.0rem; }
+
+    .lede {
+      margin-top: 16px; padding: 16px 18px; border-radius: var(--r-md);
+      border: 1px solid color-mix(in srgb, var(--primary) 22%, transparent);
+      background: color-mix(in srgb, var(--primary) 6%, transparent);
+      color: var(--on-surface); font-size: 0.96rem;
+    }
+    .lede strong { color: var(--primary); }
+
+    /* Callout — medical disclaimer */
+    .callout {
+      display: flex; gap: 14px; align-items: flex-start;
+      margin-top: 16px; padding: 18px 20px; border-radius: var(--r-md);
+      border: 1px solid color-mix(in srgb, var(--warning) 36%, transparent);
+      background: color-mix(in srgb, var(--warning) 9%, transparent);
+    }
+    .callout svg { flex: 0 0 auto; width: 22px; height: 22px; color: var(--warning); margin-top: 1px; }
+    .callout p { color: var(--on-surface) !important; }
+    .callout strong { color: var(--warning); }
+
+    /* Aside */
+    .aside { display: grid; gap: 20px; align-self: start; position: sticky; top: 90px; }
+    .toc-card { padding: 20px 22px; }
+    .toc-card h2 {
+      font-family: var(--sans); font-size: 0.72rem; letter-spacing: 0.14em;
+      text-transform: uppercase; color: var(--on-surface-muted); margin-bottom: 12px; font-weight: 600;
+    }
+    .toc { display: grid; gap: 2px; }
+    .toc a {
+      display: block; padding: 8px 12px; border-radius: var(--r-sm);
+      color: var(--on-surface-muted); font-size: 0.92rem;
+      border-left: 2px solid transparent; transition: 160ms var(--ease);
+    }
+    .toc a:hover { color: var(--on-surface); background: var(--surface-elevated); }
+    .toc a[aria-current="true"] {
+      color: var(--primary); border-left-color: var(--primary);
+      background: color-mix(in srgb, var(--primary) 8%, transparent);
+    }
+
+    .profile-card {
+      padding: 22px;
+      background:
+        radial-gradient(circle at 100% 0%, color-mix(in srgb, var(--champagne) 16%, transparent), transparent 42%),
+        var(--surface);
+    }
+    .profile-card h2 { font-size: 1.18rem; font-weight: 600; margin-bottom: 14px; color: var(--on-surface); }
+    .profile-list { display: grid; gap: 10px; }
+    .profile-item {
+      padding: 13px 15px; border-radius: var(--r-md);
+      border: 1px solid var(--border); background: var(--surface-elevated);
+    }
+    .profile-item strong {
+      display: block; color: var(--on-surface); font-size: 0.74rem;
+      text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 5px;
+    }
+    .profile-item span, .profile-item a { color: var(--on-surface-muted); word-break: break-word; }
+
+    .notice {
+      padding: 16px 18px; border-radius: var(--r-md);
+      border: 1px solid color-mix(in srgb, var(--success) 30%, transparent);
+      background: color-mix(in srgb, var(--success) 8%, transparent);
+      color: var(--on-surface); font-size: 0.92rem;
+    }
+
+    footer {
+      margin-top: 26px; padding: 26px 30px;
+      border: 1px solid var(--border); border-radius: var(--r-xl);
+      background: var(--surface); color: var(--on-surface-muted);
+      box-shadow: var(--shadow-card);
+    }
+    footer strong { display: block; color: var(--on-surface); margin-bottom: 8px; font-family: var(--serif); font-size: 1.05rem; }
+    .footer-meta {
+      margin-top: 16px; padding-top: 16px; border-top: 1px solid var(--border);
+      font-size: 0.84rem; color: var(--on-surface-muted);
+    }
+
+    .to-top {
+      position: fixed; right: 22px; bottom: 22px; width: 46px; height: 46px;
+      display: inline-flex; align-items: center; justify-content: center;
+      border-radius: 50%; border: 1px solid var(--border);
+      background: var(--surface-elevated); color: var(--on-surface);
+      box-shadow: var(--shadow-panel); cursor: pointer;
+      opacity: 0; visibility: hidden; transform: translateY(10px);
+      transition: 220ms var(--ease); z-index: 45;
+    }
+    .to-top.is-visible { opacity: 1; visibility: visible; transform: translateY(0); }
+    .to-top svg { width: 20px; height: 20px; }
+
+    .reveal { opacity: 0; transform: translateY(16px); transition: opacity 600ms var(--ease), transform 600ms var(--ease); }
+    .reveal.is-in { opacity: 1; transform: none; }
+
+    @media (max-width: 1000px) {
+      .hero, .section-grid { grid-template-columns: 1fr; }
+      .aside { position: static; }
+    }
+    @media (max-width: 720px) {
+      .shell { width: min(calc(100% - 20px), var(--max-width)); }
+      .topbar { flex-wrap: wrap; border-radius: 22px; padding: 12px 14px; }
+      .topbar-actions { order: 2; }
+      .menu-toggle { display: inline-flex; }
+      .nav {
+        order: 3; width: 100%; display: none; flex-direction: column; gap: 6px; padding-top: 4px;
+      }
+      .nav a { text-align: center; border-color: var(--border); background: var(--surface-elevated); }
+      .topbar.is-open .nav { display: flex; }
+      .hero-card, .side-card, .section, .profile-card, footer { padding: 22px; }
+      .hero-stats { grid-template-columns: 1fr; }
+      h1 { font-size: clamp(2.1rem, 9vw, 3rem); }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      .reveal { opacity: 1; transform: none; transition: none; }
+      .eyebrow .dot { animation: none; }
+      * { transition-duration: 0.01ms !important; }
+    }
+
+    @media print {
+      html[data-lang="tr"] [lang="en"], html[data-lang="en"] [lang="tr"] { display: none !important; }
+      body { background: #fff; color: #1a1a1a; }
+      .progress, .topbar, .aside, .to-top, .skip-link, .hero-card::after { display: none !important; }
+      .card, .hero-card, footer { box-shadow: none; border-color: #ddd; background: #fff; }
+      .section-grid, .hero { grid-template-columns: 1fr; }
+      h1, h2, h3, .section-intro, .stat .value, footer strong { color: #1a1a1a; }
+      .section p, .section li, .hero-copy { color: #333; }
+      a { color: #9C4A33; }
+    }
+  </style>
+</head>
+<body>
+  <div class="progress" id="progress" aria-hidden="true"></div>
+  <a class="skip-link" href="#overview"><span lang="tr">İçeriğe geç</span><span lang="en">Skip to content</span></a>
+
+  <div class="shell">
+    <header class="topbar" id="topbar">
+      <div class="brand">
+        <span class="brand-mark" aria-hidden="true"></span>
+        <div class="brand-text">
+          <span class="brand-kicker"><span lang="tr">Resmî yasal sayfa</span><span lang="en">Official legal page</span></span>
+          <span class="brand-title">Ruyana</span>
+        </div>
+      </div>
+
+      <div class="topbar-actions">
+        <div class="lang-switch" role="group" aria-label="Language / Dil">
+          <button type="button" data-set="tr" aria-label="Türkçe">TR</button>
+          <button type="button" data-set="en" aria-label="English">EN</button>
+        </div>
+        <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Menu">
+          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M4 7H20M4 12H20M4 17H20" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+          </svg>
+        </button>
+      </div>
+
+      <nav class="nav" id="site-nav" aria-label="Sections">
+        <a href="#overview"><span lang="tr">Genel Bakış</span><span lang="en">Overview</span></a>
+        <a href="#privacy"><span lang="tr">Gizlilik</span><span lang="en">Privacy</span></a>
+        <a href="#terms"><span lang="tr">Koşullar</span><span lang="en">Terms</span></a>
+        <a href="#contact"><span lang="tr">İletişim</span><span lang="en">Contact</span></a>
+      </nav>
+    </header>
+
+    <!-- HERO -->
+    <section class="hero">
+      <article class="hero-card reveal">
+        <div>
+          <span class="eyebrow">
+            <span class="dot" aria-hidden="true"></span>
+            <span lang="tr">Tasarımı gereği gizli</span><span lang="en">Private by design</span>
+          </span>
+          <h1>
+            <span lang="tr">Gizlilik Politikası &amp; Kullanım Koşulları</span>
+            <span lang="en">Privacy Policy &amp; Terms of Use</span>
+          </h1>
+          <p class="hero-copy">
+            <span lang="tr">Bu sayfa, Ruyana'nın bilgileri nasıl ele aldığını, kullanıcıların hangi haklara ve seçimlere sahip olduğunu ve uygulamayı kullanırken geçerli olan koşulları açıklar. Kayıtlarınız ve fotoğraflarınız cihazınızda ve sizin özel iCloud hesabınızda kalır.</span>
+            <span lang="en">This page explains how Ruyana handles information, the rights and choices users have, and the terms that apply when using the app. Your records and photos stay on your device and in your own private iCloud account.</span>
+          </p>
+          <div class="hero-meta">
+            <span class="meta-pill"><span lang="tr">Yürürlük tarihi:</span><span lang="en">Effective date:</span> <b>2026-06-30</b></span>
+            <span class="meta-pill"><span lang="tr">iPhone uygulaması için geçerlidir</span><span lang="en">Applies to the iPhone app</span></span>
+          </div>
+        </div>
+
+        <div class="hero-stats" aria-label="Key principles">
+          <div class="stat">
+            <span class="label"><span lang="tr">İlke</span><span lang="en">Principle</span></span>
+            <span class="value"><span lang="tr">Verisi kullanıcıya ait</span><span lang="en">Patient-owned data</span></span>
+          </div>
+          <div class="stat">
+            <span class="label"><span lang="tr">Depolama</span><span lang="en">Storage</span></span>
+            <span class="value"><span lang="tr">Cihazda + özel iCloud</span><span lang="en">On-device + private iCloud</span></span>
+          </div>
+          <div class="stat">
+            <span class="label"><span lang="tr">Toplama</span><span lang="en">Collection</span></span>
+            <span class="value"><span lang="tr">Veri toplanmaz</span><span lang="en">Data Not Collected</span></span>
+          </div>
+        </div>
+      </article>
+
+      <div class="hero-side">
+        <section class="card side-card reveal">
+          <h2><span lang="tr">Ruyana nedir</span><span lang="en">What Ruyana is</span></h2>
+          <p>
+            <span lang="tr">Ruyana; estetik ve bakım yolculuğunu kişisel olarak kaydetmek, ilerlemeyi fotoğraflarla karşılaştırmak ve geçmişini düzenli tutmak isteyenler için özel bir günlüktür. Tıbbi bir cihaz, klinik kayıt sistemi (EMR) ya da sağlık danışmanlığı değildir.</span>
+            <span lang="en">Ruyana is a private journal for people who want to personally record their aesthetic and self-care journey, compare progress with photos, and keep an organized history. It is not a medical device, a clinical records system (EMR), or health advice.</span>
+          </p>
+          <div class="chips" aria-hidden="false">
+            <span class="chip"><span lang="tr">Çevrimdışı öncelikli</span><span lang="en">Offline-first</span></span>
+            <span class="chip"><span lang="tr">Özel günlük</span><span lang="en">Private journal</span></span>
+            <span class="chip"><span lang="tr">iCloud senkron</span><span lang="en">iCloud sync</span></span>
+            <span class="chip"><span lang="tr">Reklamsız</span><span lang="en">No ads</span></span>
+          </div>
+        </section>
+
+        <section class="card side-card reveal">
+          <h2><span lang="tr">Özetle</span><span lang="en">At a glance</span></h2>
+          <ul>
+            <li><span lang="tr">İçeriğin tamamı kullanıcının kendi girdiği bilgilerdir.</span><span lang="en">All content is information the user enters themselves.</span></li>
+            <li><span lang="tr">Geliştiricinin sunucusu, kopyası veya çözme anahtarı yoktur.</span><span lang="en">The developer has no server, no copy, and no decryption key.</span></li>
+            <li><span lang="tr">Reklam, analitik veya üçüncü taraf takip SDK'sı kullanılmaz.</span><span lang="en">No ad, analytics, or third-party tracking SDKs are used.</span></li>
+            <li><span lang="tr">Kişisel bilgilerin satışı söz konusu değildir.</span><span lang="en">There is no sale of personal information.</span></li>
+          </ul>
+        </section>
+      </div>
+    </section>
+
+    <div class="section-grid">
+      <main class="content">
+
+        <!-- OVERVIEW -->
+        <section class="card section reveal" id="overview" aria-labelledby="overview-h">
+          <span class="section-tag"><span lang="tr">Bölüm 01 · Genel Bakış</span><span lang="en">Section 01 · Overview</span></span>
+          <h2 id="overview-h"><span lang="tr">Genel Bakış</span><span lang="en">Overview</span></h2>
+          <p class="section-intro">
+            <span lang="tr">Bu Gizlilik Politikası ve Kullanım Koşulları, Ahmet Atar tarafından geliştirilen Ruyana uygulaması için geçerlidir. Uygulamaya erişerek veya onu kullanarak kullanıcı, bu sayfayı ve burada açıklanan koşulları kabul etmiş olur.</span>
+            <span lang="en">These Terms of Use and Privacy Policy apply to Ruyana, developed by Ahmet Atar. By accessing or using the app, the user acknowledges this page and the conditions described here.</span>
+          </p>
+          <p>
+            <span lang="tr">Ruyana; seans ve işlem kaydı, ilerleme fotoğrafları, karşılaştırma, hatırlatıcılar, PDF dışa aktarma ve isteğe bağlı premium özellikler içerebilir. Bir özellik cihazda etkin değilse veya kullanılmıyorsa, ilgili veri uygulamaları o durumda geçerli olmayabilir.</span>
+            <span lang="en">Ruyana may include session and procedure logging, progress photos, comparison, reminders, PDF export, and optional premium features. If a feature is not enabled or not used on a device, the related data practices may not apply in that situation.</span>
+          </p>
+          <div class="callout" role="note">
+            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 9v4m0 4h.01M10.3 3.9 1.8 18a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0Z" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <p>
+              <span lang="tr"><strong>Tıbbi tavsiye değildir.</strong> Ruyana yalnızca kişisel kayıt, günlük tutma ve hatırlama amaçlıdır. Tıbbi tavsiye, teşhis, tedavi veya profesyonel sağlık hizmetinin yerine geçmez. Sağlığınıza ilişkin kararlar için her zaman nitelikli bir uzmana danışın.</span>
+              <span lang="en"><strong>Not medical advice.</strong> Ruyana is intended only for personal record-keeping, journaling, and remembering. It is not medical advice, diagnosis, treatment, or a substitute for professional care. Always consult a qualified professional for decisions about your health.</span>
+            </p>
+          </div>
+        </section>
+
+        <!-- PRIVACY -->
+        <section class="card section reveal" id="privacy" aria-labelledby="privacy-h">
+          <span class="section-tag"><span lang="tr">Bölüm 02 · Gizlilik</span><span lang="en">Section 02 · Privacy</span></span>
+          <h2 id="privacy-h"><span lang="tr">Gizlilik Politikası</span><span lang="en">Privacy Policy</span></h2>
+          <p class="section-intro">
+            <span lang="tr">Ruyana, hassas ve kişisel bir konuyu desteklemek için tasarlanmıştır. Bu nedenle uygulama, gizliliği bir özellik değil, mimarinin kendisi olarak ele alır: verileriniz cihazınızda ve sizin özel iCloud hesabınızda kalır; geliştiriciye akmaz.</span>
+            <span lang="en">Ruyana is designed to support a personal and sensitive subject. For that reason, privacy is treated not as a feature but as the architecture itself: your data stays on your device and in your own private iCloud account; it does not flow to the developer.</span>
+          </p>
+
+          <div class="lede">
+            <span lang="tr"><strong>Gizlilik sözümüz.</strong> Tedavi kayıtlarınız ve fotoğraflarınız yalnızca sizin iCloud Özel Veritabanınızda (CloudKit Private Database) bulunur. Bu uygulamanın sunucusu, verilerinizin bir kopyası, çözme anahtarı veya kimliğe bağlı analitiği yoktur. Talep edilse dahi geliştiricinin teslim edebileceği bir şey yoktur. App Store Gizlilik Etiketi: <b>"Veri Toplanmadı".</b></span>
+            <span lang="en"><strong>Our privacy promise.</strong> Your treatment records and photos reside only in your iCloud Private Database (CloudKit Private Database). This app has no server, no copy of your data, no decryption key, and no analytics on identifiable data. Even if compelled, the developer has nothing to hand over. App Store Privacy Label: <b>"Data Not Collected".</b></span>
+          </div>
+
+          <h3 id="info-provided">1. <span lang="tr">Girdiğiniz bilgiler</span><span lang="en">Information you provide</span> <a class="anchor" href="#info-provided" aria-label="Link">#</a></h3>
+          <ul>
+            <li><span lang="tr">Seanslar, işlemler, dozlar, lot/parti numaraları, tarihler, notlar, yan etkiler, kilometre taşları ve uygulamada oluşturduğunuz benzer kayıtlar.</span><span lang="en">Sessions, procedures, doses, lot/batch numbers, dates, notes, side effects, milestones, and similar records you create in the app.</span></li>
+            <li><span lang="tr">Kamerayla çektiğiniz veya fotoğraf kütüphanenizden eklediğiniz ilerleme fotoğrafları.</span><span lang="en">Progress photos you capture with the camera or add from your photo library.</span></li>
+            <li><span lang="tr">Doğrudan geliştiriciye gönderdiğiniz destek e-postaları.</span><span lang="en">Support emails you send directly to the developer.</span></li>
+          </ul>
+          <p>
+            <span lang="tr">Bu içeriğin tamamı sizin tarafınızdan girilir ve sizin kontrolünüzde kalır. Geliştirici bu bilgilere erişemez.</span>
+            <span lang="en">All of this content is entered by you and remains under your control. The developer cannot access it.</span>
+          </p>
+
+          <h3 id="permissions">2. <span lang="tr">Kamera, fotoğraflar ve Face ID izinleri</span><span lang="en">Camera, photos &amp; Face ID permissions</span> <a class="anchor" href="#permissions" aria-label="Link">#</a></h3>
+          <ul>
+            <li><span lang="tr"><b>Kamera:</b> Yalnızca ilerleme fotoğrafı çekmek için ve yalnızca siz izin verdiğinizde kullanılır.</span><span lang="en"><b>Camera:</b> Used only to capture progress photos, and only when you grant permission.</span></li>
+            <li><span lang="tr"><b>Fotoğraf kütüphanesi:</b> Yalnızca seçtiğiniz mevcut fotoğrafları içe aktarmak için erişilir.</span><span lang="en"><b>Photo library:</b> Accessed only to import existing photos you choose.</span></li>
+            <li><span lang="tr"><b>Face ID / Touch ID:</b> İsteğe bağlı uygulama kilidi içindir. Biyometrik veriniz Apple tarafından cihazda işlenir; Ruyana onu görmez veya saklamaz.</span><span lang="en"><b>Face ID / Touch ID:</b> For the optional app lock. Your biometric data is handled on-device by Apple; Ruyana never sees or stores it.</span></li>
+          </ul>
+          <p>
+            <span lang="tr">İzni reddederseniz veya sonradan geri alırsanız, ilgili özellikler sınırlı kalır; uygulamanın geri kalanı çalışmaya devam eder.</span>
+            <span lang="en">If you deny or later revoke a permission, the related features become limited; the rest of the app keeps working.</span>
+          </p>
+
+          <h3 id="on-device">3. <span lang="tr">Cihaz üzerinde işleme</span><span lang="en">On-device processing</span> <a class="anchor" href="#on-device" aria-label="Link">#</a></h3>
+          <p>
+            <span lang="tr">Fotoğraf hizalama ve poz/çerçeve eşleştirme gibi görüntü analizleri, Apple'ın Vision çerçevesi kullanılarak tamamen cihazınızda yapılır. Bu analiz fotoğraflarınızı cihazdan dışarı göndermez ve geliştiriciye iletmez.</span>
+            <span lang="en">Image analysis such as photo alignment and pose/frame matching is performed entirely on your device using Apple's Vision framework. This analysis does not send your photos off the device and does not transmit them to the developer.</span>
+          </p>
+
+          <h3 id="apple-services">4. <span lang="tr">iCloud ve Apple hizmetleri</span><span lang="en">iCloud and Apple services</span> <a class="anchor" href="#apple-services" aria-label="Link">#</a></h3>
+          <p>
+            <span lang="tr">Ruyana; SwiftData, CloudKit/iCloud, StoreKit ve Bildirimler gibi Apple tarafından sağlanan çerçevelere dayanır. Senkronizasyon etkin olduğunda kayıtlarınız ve fotoğraflarınız, Apple kimliğinize bağlı <b>özel</b> iCloud veritabanınızda (sizin iCloud kotanıza sayılan CKAsset'ler olarak) saklanır. Bu, Apple'ın yönettiği bir alandır; geliştiricinin erişimi yoktur.</span>
+            <span lang="en">Ruyana relies on Apple-provided frameworks such as SwiftData, CloudKit/iCloud, StoreKit, and Notifications. When sync is enabled, your records and photos are stored in your <b>private</b> iCloud database tied to your Apple ID (as CKAssets counted against your own iCloud quota). This is an Apple-managed space to which the developer has no access.</span>
+          </p>
+          <p>
+            <span lang="tr">Senkronizasyon için iCloud oturumu gerekir. iCloud'u kullanmazsanız uygulama yalnızca cihazda (yerel) modda çalışır.</span>
+            <span lang="en">Sync requires being signed in to iCloud. If you do not use iCloud, the app runs in local, on-device-only mode.</span>
+          </p>
+
+          <h3 id="not-collected">5. <span lang="tr">Toplamadığımız bilgiler</span><span lang="en">What we do not collect</span> <a class="anchor" href="#not-collected" aria-label="Link">#</a></h3>
+          <ul>
+            <li><span lang="tr">Üçüncü taraf reklam SDK'ları — kullanılmaz.</span><span lang="en">Third-party advertising SDKs — none.</span></li>
+            <li><span lang="tr">Üçüncü taraf analitik veya takip araçları — kullanılmaz.</span><span lang="en">Third-party analytics or tracking tools — none.</span></li>
+            <li><span lang="tr">Kimliğe bağlı kullanım profili, dönüşüm hunisi veya davranış izleme — yoktur.</span><span lang="en">Identifiable usage profiling, conversion funnels, or behavioral tracking — none.</span></li>
+            <li><span lang="tr">Kişisel bilgilerinizin satışı veya reklam ağlarıyla paylaşımı — yapılmaz.</span><span lang="en">Sale of your personal information, or sharing with ad networks — none.</span></li>
+          </ul>
+
+          <h3 id="subscriptions-data">6. <span lang="tr">Abonelik ve satın almalar</span><span lang="en">Subscriptions and purchases</span> <a class="anchor" href="#subscriptions-data" aria-label="Link">#</a></h3>
+          <p>
+            <span lang="tr">Satın alma, abonelik ve yetkilendirme durumu Apple'ın StoreKit sistemleri üzerinden yönetilir. Ruyana yalnızca premium erişiminizin etkin olup olmadığını görür; ödeme bilgilerinizi (kart, fatura adresi vb.) almaz veya saklamaz — bunlar Apple tarafından işlenir.</span>
+            <span lang="en">Purchases, subscriptions, and entitlement status are managed through Apple's StoreKit systems. Ruyana only sees whether your premium access is active; it does not receive or store your payment details (card, billing address, etc.) — those are handled by Apple.</span>
+          </p>
+
+          <h3 id="retention">7. <span lang="tr">Saklama ve sizin kontrolünüz</span><span lang="en">Retention and your control</span> <a class="anchor" href="#retention" aria-label="Link">#</a></h3>
+          <ul>
+            <li><span lang="tr">Kayıtlarınız siz silene kadar cihazınızda ve özel iCloud hesabınızda kalır.</span><span lang="en">Your records remain on your device and in your private iCloud account until you delete them.</span></li>
+            <li><span lang="tr">Uygulama içinde tek tek kayıt silebilir; "sıfırdan başla" ile bu iCloud hesabındaki tüm Ruyana verinizi kalıcı ve geri alınamaz şekilde silebilirsiniz.</span><span lang="en">You can delete individual records in the app, or use "fresh start" to permanently and irreversibly erase all your Ruyana data from that iCloud account.</span></li>
+            <li><span lang="tr">Uygulamayı silmek, cihazdaki yerel verileri kaldırır; iCloud kopyası Apple ayarlarınızdan yönetilir.</span><span lang="en">Deleting the app removes local data on the device; the iCloud copy is managed from your Apple settings.</span></li>
+            <li><span lang="tr">Verilerinizi şifreli bir yedek olarak Dosyalar (Files) uygulamasına dışa aktarabilirsiniz.</span><span lang="en">You can export your data as an encrypted backup to the Files app.</span></li>
+          </ul>
+
+          <h3 id="rights">8. <span lang="tr">Haklarınız (KVKK / GDPR)</span><span lang="en">Your rights (KVKK / GDPR)</span> <a class="anchor" href="#rights" aria-label="Link">#</a></h3>
+          <p>
+            <span lang="tr">6698 sayılı KVKK (Türkiye) ve GDPR (AB) kapsamında erişim, düzeltme, silme, işlemeyi kısıtlama, taşınabilirlik ve itiraz haklarına sahipsiniz. Ruyana'nın mimarisi gereği verileriniz zaten yalnızca sizin kontrolünüzdedir: uygulama içinden her zaman görüntüleyebilir, düzenleyebilir, dışa aktarabilir ve kalıcı olarak silebilirsiniz. Geliştiricinin verilerinize erişimi olmadığından, çoğu talep doğrudan uygulama içinden anında yerine getirilir. Yine de bu sayfadaki iletişim adresine yazarak haklarınıza ilişkin başvuruda bulunabilirsiniz.</span>
+            <span lang="en">Under KVKK (Turkey, Law No. 6698) and GDPR (EU) you have rights of access, rectification, erasure, restriction of processing, portability, and objection. By Ruyana's architecture, your data is already under your sole control: you can view, edit, export, and permanently delete it from within the app at any time. Because the developer has no access to your data, most requests are fulfilled instantly from within the app. You may still contact the address on this page regarding your rights.</span>
+          </p>
+
+          <h3 id="children">9. <span lang="tr">Çocuklar</span><span lang="en">Children</span> <a class="anchor" href="#children" aria-label="Link">#</a></h3>
+          <p>
+            <span lang="tr">Ruyana, App Store listelemesinde aksi açıkça belirtilmedikçe, bulunduğu ülkede geçerli yasaların geçerli rıza için gerektirdiği asgari yaşın altındaki çocuklara yönelik değildir.</span>
+            <span lang="en">Ruyana is not intended for children under the minimum age required by applicable law to provide valid consent in their jurisdiction, unless the App Store listing clearly states otherwise.</span>
+          </p>
+
+          <h3 id="international">10. <span lang="tr">Uluslararası kullanım</span><span lang="en">International use</span> <a class="anchor" href="#international" aria-label="Link">#</a></h3>
+          <p>
+            <span lang="tr">Konumunuza, cihaz ayarlarınıza ve Apple altyapısına bağlı olarak, iCloud üzerinden senkronlanan veriler ikamet ettiğiniz ülke dışındaki ülkelerde Apple tarafından işlenebilir veya saklanabilir. Bu aktarımlar Apple'ın koşullarına tabidir.</span>
+            <span lang="en">Depending on your location, device settings, and Apple infrastructure, data synced via iCloud may be processed or stored by Apple in countries other than the one where you reside. Such transfers are subject to Apple's terms.</span>
+          </p>
+
+          <h3 id="changes">11. <span lang="tr">Bu politikadaki değişiklikler</span><span lang="en">Changes to this policy</span> <a class="anchor" href="#changes" aria-label="Link">#</a></h3>
+          <p>
+            <span lang="tr">Bu Gizlilik Politikası zaman zaman güncellenebilir. Güncel sürüm, uygun olduğunda revize edilmiş bir yürürlük tarihiyle bu sayfada yayımlanır.</span>
+            <span lang="en">This Privacy Policy may be updated from time to time. The updated version will be posted on this page with a revised effective date when applicable.</span>
+          </p>
+        </section>
+
+        <!-- TERMS -->
+        <section class="card section reveal" id="terms" aria-labelledby="terms-h">
+          <span class="section-tag"><span lang="tr">Bölüm 03 · Koşullar</span><span lang="en">Section 03 · Terms</span></span>
+          <h2 id="terms-h"><span lang="tr">Kullanım Koşulları</span><span lang="en">Terms of Use</span></h2>
+          <p class="section-intro">
+            <span lang="tr">Ruyana'yı indirerek, erişerek veya kullanarak bu Kullanım Koşulları'nı kabul edersiniz. Koşulları kabul etmiyorsanız uygulamayı kullanmamalısınız.</span>
+            <span lang="en">By downloading, accessing, or using Ruyana, you agree to these Terms of Use. If you do not agree, you should not use the app.</span>
+          </p>
+
+          <h3 id="license">1. <span lang="tr">Lisans</span><span lang="en">License</span> <a class="anchor" href="#license" aria-label="Link">#</a></h3>
+          <p>
+            <span lang="tr">Bu koşullara ve geçerli App Store kurallarına tabi olarak, size Ruyana'yı kişisel ve ticari olmayan amaçlarla kullanmanız için sınırlı, münhasır olmayan, devredilemez ve geri alınabilir bir lisans verilir.</span>
+            <span lang="en">Subject to these terms and any applicable App Store rules, you are granted a limited, non-exclusive, non-transferable, revocable license to use Ruyana for personal, non-commercial use.</span>
+          </p>
+
+          <h3 id="not-medical">2. <span lang="tr">Yalnızca kişisel kayıt — tıbbi tavsiye değildir</span><span lang="en">Personal record-keeping only — not medical advice</span> <a class="anchor" href="#not-medical" aria-label="Link">#</a></h3>
+          <p>
+            <span lang="tr">Ruyana yalnızca bilgilendirme, günlük tutma ve kişisel kayıt amaçlıdır. Tıbbi tavsiye, teşhis, tedavi, acil durum yanıtı veya profesyonel bakımın yerine geçmez ve bir tıbbi cihaz değildir. Acil bir durumda veya ivedi yardıma ihtiyaç duyduğunuzda, derhal bölgenizdeki yetkili sağlık veya acil hizmetlerle iletişime geçin.</span>
+            <span lang="en">Ruyana is provided for informational, journaling, and personal record-keeping purposes only. It is not medical advice, diagnosis, treatment, emergency response, a substitute for professional care, and it is not a medical device. In an emergency or if you need urgent help, contact qualified health or emergency services in your area immediately.</span>
+          </p>
+
+          <h3 id="acceptable-use">3. <span lang="tr">Kabul edilebilir kullanım</span><span lang="en">Acceptable use</span> <a class="anchor" href="#acceptable-use" aria-label="Link">#</a></h3>
+          <ul>
+            <li><span lang="tr">Uygulamayı veya ilgili sistemleri kötüye kullanamaz, bunlara müdahale edemez veya yetkisiz erişim girişiminde bulunamazsınız (yasanın bu kısıtlamaya izin vermediği durumlar hariç).</span><span lang="en">You may not misuse, interfere with, or attempt unauthorized access to the app or related systems, except where such restriction is not permitted by law.</span></li>
+            <li><span lang="tr">Uygulamayı geçerli yasaları ihlal edecek veya başkalarının haklarını çiğneyecek şekilde kullanamazsınız.</span><span lang="en">You may not use the app in a manner that violates applicable law or infringes the rights of others.</span></li>
+            <li><span lang="tr">Uygulama aracılığıyla kötü amaçlı kod, sahte bilgi veya istismar edici içerik iletemezsiniz.</span><span lang="en">You may not transmit malicious code, fraudulent information, or abusive material through the app.</span></li>
+          </ul>
+
+          <h3 id="your-content">4. <span lang="tr">İçeriğiniz ve yedekleme sorumluluğu</span><span lang="en">Your content and backup responsibility</span> <a class="anchor" href="#your-content" aria-label="Link">#</a></h3>
+          <p>
+            <span lang="tr">Uygulamaya girdiğiniz tüm içerik size aittir ve sizin sorumluluğunuzdadır. Veriler sizin cihazınızda ve Apple kimliğinize bağlı iCloud hesabında bulunduğundan, Apple kimliğinize erişimi kaybetmeniz veri kaybına yol açabilir. Geliştiricinin verilerinizin bir kopyası olmadığından bunu kurtaramaz. Düzenli olarak şifreli yedek (Dosyalar'a dışa aktarma) almanız önerilir.</span>
+            <span lang="en">All content you enter belongs to you and is your responsibility. Because data resides on your device and in the iCloud account tied to your Apple ID, losing access to your Apple ID may result in data loss. The developer has no copy of your data and cannot recover it. You are encouraged to keep regular encrypted backups (export to Files).</span>
+          </p>
+
+          <h3 id="subscriptions">5. <span lang="tr">Premium özellikler ve abonelikler</span><span lang="en">Premium features and subscriptions</span> <a class="anchor" href="#subscriptions" aria-label="Link">#</a></h3>
+          <p>
+            <span lang="tr">Ruyana, sınırlı bir ücretsiz kullanım sunar ve daha fazlası için ücretli abonelik veya tek seferlik satın alma gerektirebilir. Faturalama, yenileme, iptal, iade ve ödeme işlemleri, App Store hesabınızın koşulları kapsamında Apple tarafından yürütülür.</span>
+            <span lang="en">Ruyana offers a limited free allowance and may require a paid subscription or one-time purchase for more. Billing, renewals, cancellations, refunds, and payment processing are handled by Apple under your App Store account terms.</span>
+          </p>
+          <p>
+            <span lang="tr">Ruyana; aylık ve yıllık otomatik yenilenen Premium abonelikler ve tek seferlik bir Lifetime (ömür boyu) satın alma sunabilir. Abonelik adları, süreleri, fiyatları ve içerdiği özellikler satın almadan önce uygulamada gösterilir. Fiyatlar ülkeye/bölgeye göre değişebilir ve Apple'ın App Store fiyatlandırmasıyla görüntülenir.</span>
+            <span lang="en">Ruyana may offer monthly and yearly auto-renewable Premium subscriptions and a one-time Lifetime purchase. Subscription titles, durations, prices, and included features are shown in the app before purchase. Prices may vary by country or region and are displayed using Apple's App Store pricing.</span>
+          </p>
+          <p>
+            <span lang="tr">Ödeme, satın almanın onaylanmasıyla Apple ID hesabınıza yansıtılır. Abonelikler, mevcut dönemin bitiminden en az 24 saat önce otomatik yenileme kapatılmadıkça kendiliğinden yenilenir; Apple ID hesabınız, dönem bitiminden önceki 24 saat içinde yenileme için ücretlendirilebilir. Aboneliklerinizi satın aldıktan sonra App Store hesap ayarlarınızdan yönetebilir veya iptal edebilirsiniz.</span>
+            <span lang="en">Payment is charged to your Apple ID account at confirmation of purchase. Subscriptions automatically renew unless auto-renewal is turned off at least 24 hours before the end of the current period; your Apple ID account may be charged for renewal within 24 hours before the end of the current period. You can manage or cancel subscriptions after purchase in your App Store account settings.</span>
+          </p>
+          <p>
+            <span lang="tr">İptal, gelecekteki yenilemeleri durdurur; ödenmiş döneme ait erişim, dönem sonuna kadar sürebilir. Önemli olarak: aboneliğiniz sona erse bile kendi kayıtlarınız her zaman görüntülenebilir ve PDF olarak dışa aktarılabilir kalır — kendi geçmişinize erişiminiz asla tamamen kapatılmaz.</span>
+            <span lang="en">Cancellation stops future renewals; access to a paid period may continue until the end of that period. Importantly: even if your subscription lapses, your own records always remain viewable and exportable as PDF — you are never fully locked out of your own history.</span>
+          </p>
+
+          <h3 id="availability">6. <span lang="tr">Erişilebilirlik ve değişiklikler</span><span lang="en">Availability and changes</span> <a class="anchor" href="#availability" aria-label="Link">#</a></h3>
+          <p>
+            <span lang="tr">Özellikler zamanla eklenebilir, değiştirilebilir, sınırlanabilir, askıya alınabilir veya kaldırılabilir. Ruyana; uygulamanın, senkronizasyonun, bildirimlerin veya herhangi bir özellik setinin kesintisiz erişilebilirliğini garanti etmez.</span>
+            <span lang="en">Features may be added, changed, limited, suspended, or removed over time. Ruyana does not guarantee uninterrupted availability of the app, sync, notifications, or any particular feature set.</span>
+          </p>
+
+          <h3 id="ip">7. <span lang="tr">Fikrî mülkiyet</span><span lang="en">Intellectual property</span> <a class="anchor" href="#ip" aria-label="Link">#</a></h3>
+          <p>
+            <span lang="tr">Uygulama, markası, tasarımı, metinleri, grafikleri ve ilgili materyaller Ahmet Atar'a aittir veya lisanslıdır; ilgili sahiplerinin mülkiyetinde kalan üçüncü taraf materyalleri ve Apple platform varlıkları bunun dışındadır.</span>
+            <span lang="en">The app, its branding, design, text, graphics, and related materials are owned by or licensed to Ahmet Atar, except for third-party materials and Apple platform assets that remain the property of their respective owners.</span>
+          </p>
+
+          <h3 id="termination">8. <span lang="tr">Fesih</span><span lang="en">Termination</span> <a class="anchor" href="#termination" aria-label="Link">#</a></h3>
+          <p>
+            <span lang="tr">Bu koşullar ihlal edilirse, devam eden kullanım hukuka aykırı veya güvensiz hâle gelirse ya da uygulama durdurulursa, uygulamaya veya belirli özelliklere erişim askıya alınabilir veya sonlandırılabilir.</span>
+            <span lang="en">Access to the app or certain features may be suspended or terminated if these terms are violated, if continued operation becomes unlawful or unsafe, or if the app is discontinued.</span>
+          </p>
+
+          <h3 id="warranties">9. <span lang="tr">Garanti reddi</span><span lang="en">Disclaimer of warranties</span> <a class="anchor" href="#warranties" aria-label="Link">#</a></h3>
+          <p>
+            <span lang="tr">Yasaların izin verdiği azami ölçüde Ruyana, açık veya zımni hiçbir garanti olmaksızın "olduğu gibi" ve "mevcut olduğu şekilde" sunulur.</span>
+            <span lang="en">To the maximum extent permitted by law, Ruyana is provided on an "as is" and "as available" basis without warranties of any kind, whether express or implied.</span>
+          </p>
+
+          <h3 id="liability">10. <span lang="tr">Sorumluluğun sınırlandırılması</span><span lang="en">Limitation of liability</span> <a class="anchor" href="#liability" aria-label="Link">#</a></h3>
+          <p>
+            <span lang="tr">Yasaların izin verdiği azami ölçüde Ahmet Atar; uygulamanın kullanımından doğan veya bununla ilgili dolaylı, arızi, özel, sonuçsal veya cezai zararlardan ya da veri, kâr, itibar veya iş kaybından sorumlu tutulamaz.</span>
+            <span lang="en">To the maximum extent permitted by law, Ahmet Atar will not be liable for indirect, incidental, special, consequential, or punitive damages, or for any loss of data, profits, goodwill, or business interruption arising out of or related to use of the app.</span>
+          </p>
+
+          <h3 id="law">11. <span lang="tr">Geçerli hukuk</span><span lang="en">Governing law</span> <a class="anchor" href="#law" aria-label="Link">#</a></h3>
+          <p>
+            <span lang="tr">Bu koşullar, kanunlar ihtilafı ilkeleri hariç olmak üzere Türkiye Cumhuriyeti yasalarına tabidir. Bulunduğunuz yerde geçerli olan emredici tüketici koruma haklarınız saklıdır.</span>
+            <span lang="en">These terms are governed by the laws of the Republic of Türkiye, excluding conflict-of-law principles. Your mandatory consumer-protection rights in your place of residence remain reserved.</span>
+          </p>
+
+          <h3 id="platform">12. <span lang="tr">Platform koşulları</span><span lang="en">Platform terms</span> <a class="anchor" href="#platform" aria-label="Link">#</a></h3>
+          <p>
+            <span lang="tr">Ruyana Apple platformları üzerinden edinildiğinden, uygulamanın kullanımı geçerli Apple koşul ve şartlarına da tabidir.</span>
+            <span lang="en">Because Ruyana is obtained through Apple platforms, use of the app is also subject to any applicable Apple terms and conditions.</span>
+          </p>
+        </section>
+      </main>
+
+      <aside class="aside">
+        <nav class="card toc-card" aria-label="On this page">
+          <h2><span lang="tr">Bu sayfada</span><span lang="en">On this page</span></h2>
+          <div class="toc" id="toc">
+            <a href="#overview"><span lang="tr">Genel Bakış</span><span lang="en">Overview</span></a>
+            <a href="#privacy"><span lang="tr">Gizlilik Politikası</span><span lang="en">Privacy Policy</span></a>
+            <a href="#terms"><span lang="tr">Kullanım Koşulları</span><span lang="en">Terms of Use</span></a>
+            <a href="#contact"><span lang="tr">İletişim</span><span lang="en">Contact</span></a>
+          </div>
+        </nav>
+
+        <section class="card profile-card">
+          <h2><span lang="tr">Yayıncı bilgileri</span><span lang="en">Publisher information</span></h2>
+          <div class="profile-list">
+            <div class="profile-item">
+              <strong><span lang="tr">Uygulama</span><span lang="en">App</span></strong>
+              <span>Ruyana</span>
+            </div>
+            <div class="profile-item">
+              <strong><span lang="tr">Geliştirici / Veri sorumlusu</span><span lang="en">Developer / Data controller</span></strong>
+              <span>Ahmet Atar</span>
+            </div>
+            <div class="profile-item">
+              <strong><span lang="tr">İletişim e-postası</span><span lang="en">Contact email</span></strong>
+              <a href="mailto:ahmetatar@outlook.com">ahmetatar@outlook.com</a>
+            </div>
+          </div>
+        </section>
+
+        <section class="card side-card">
+          <h2><span lang="tr">Veri haklarınız</span><span lang="en">Your data rights</span></h2>
+          <div class="notice">
+            <span lang="tr">Gizlilik, veri işleme, destek veya bu koşullarla ilgili sorularınızı <a href="mailto:ahmetatar@outlook.com">ahmetatar@outlook.com</a> adresine gönderebilirsiniz.</span>
+            <span lang="en">Questions about privacy, data handling, support, or these terms can be sent to <a href="mailto:ahmetatar@outlook.com">ahmetatar@outlook.com</a>.</span>
+          </div>
+        </section>
+      </aside>
+    </div>
+
+    <footer id="contact">
+      <strong><span lang="tr">İletişim</span><span lang="en">Contact</span></strong>
+      <span lang="tr">Ruyana ile ilgili destek, gizlilik talepleri veya hukuki sorular için Ahmet Atar'a <a href="mailto:ahmetatar@outlook.com">ahmetatar@outlook.com</a> adresinden ulaşabilirsiniz.</span>
+      <span lang="en">For support, privacy-related requests, or legal inquiries regarding Ruyana, contact Ahmet Atar at <a href="mailto:ahmetatar@outlook.com">ahmetatar@outlook.com</a>.</span>
+      <div class="footer-meta">
+        © <span id="year">2026</span> Ahmet Atar · Ruyana.
+        <span lang="tr">Tüm hakları saklıdır.</span><span lang="en">All rights reserved.</span>
+      </div>
+    </footer>
+  </div>
+
+  <button class="to-top" id="toTop" type="button" aria-label="Top">
+    <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+      <path d="M12 19V5M12 5L6 11M12 5L18 11" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+  </button>
+
+  <script>
+    (function () {
+      "use strict";
+      var root = document.documentElement;
+
+      /* Language switch */
+      var langButtons = document.querySelectorAll(".lang-switch button");
+      function setLang(lang) {
+        root.setAttribute("data-lang", lang);
+        root.lang = lang;
+        try { localStorage.setItem("ruyana-lang", lang); } catch (e) {}
+      }
+      langButtons.forEach(function (b) {
+        b.addEventListener("click", function () { setLang(b.getAttribute("data-set")); });
+      });
+
+      /* Mobile nav */
+      var topbar = document.getElementById("topbar");
+      var toggle = document.querySelector(".menu-toggle");
+      var navLinks = document.querySelectorAll(".nav a");
+      function closeMenu() {
+        if (!topbar || !toggle) return;
+        topbar.classList.remove("is-open");
+        toggle.setAttribute("aria-expanded", "false");
+      }
+      if (topbar && toggle) {
+        toggle.addEventListener("click", function () {
+          var open = topbar.classList.toggle("is-open");
+          toggle.setAttribute("aria-expanded", open ? "true" : "false");
+        });
+        navLinks.forEach(function (l) { l.addEventListener("click", closeMenu); });
+      }
+
+      /* Footer year (kept inside copyright, not a legal date) */
+      var yearEl = document.getElementById("year");
+      if (yearEl) yearEl.textContent = String(new Date().getFullYear());
+
+      /* Reading progress + back-to-top */
+      var progress = document.getElementById("progress");
+      var toTop = document.getElementById("toTop");
+      var ticking = false;
+      function onScroll() {
+        var doc = document.documentElement;
+        var max = doc.scrollHeight - doc.clientHeight;
+        var ratio = max > 0 ? Math.min(1, doc.scrollTop / max) : 0;
+        if (progress) progress.style.transform = "scaleX(" + ratio + ")";
+        if (toTop) toTop.classList.toggle("is-visible", doc.scrollTop > 600);
+        ticking = false;
+      }
+      window.addEventListener("scroll", function () {
+        if (!ticking) { window.requestAnimationFrame(onScroll); ticking = true; }
+      }, { passive: true });
+      onScroll();
+      if (toTop) toTop.addEventListener("click", function () { window.scrollTo({ top: 0, behavior: "smooth" }); });
+
+      /* Scroll-spy */
+      var ids = ["overview", "privacy", "terms", "contact"];
+      var sections = ids.map(function (id) { return document.getElementById(id); }).filter(Boolean);
+      var spyLinks = document.querySelectorAll(".nav a, .toc a");
+      function setActive(id) {
+        spyLinks.forEach(function (a) {
+          if (a.getAttribute("href") === "#" + id) a.setAttribute("aria-current", "true");
+          else a.removeAttribute("aria-current");
+        });
+      }
+      if ("IntersectionObserver" in window && sections.length) {
+        var vis = {};
+        var spy = new IntersectionObserver(function (entries) {
+          entries.forEach(function (e) { vis[e.target.id] = e.isIntersecting ? e.intersectionRatio : 0; });
+          var best = null, bestR = 0;
+          ids.forEach(function (id) { if ((vis[id] || 0) > bestR) { bestR = vis[id]; best = id; } });
+          if (best) setActive(best);
+        }, { rootMargin: "-45% 0px -45% 0px", threshold: [0, 0.25, 0.5, 1] });
+        sections.forEach(function (s) { spy.observe(s); });
+      }
+
+      /* Reveal */
+      var reveals = document.querySelectorAll(".reveal");
+      var reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+      if (reduce || !("IntersectionObserver" in window)) {
+        reveals.forEach(function (el) { el.classList.add("is-in"); });
+      } else {
+        var ro = new IntersectionObserver(function (entries, obs) {
+          entries.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add("is-in"); obs.unobserve(e.target); } });
+        }, { rootMargin: "0px 0px -8% 0px", threshold: 0.08 });
+        reveals.forEach(function (el) { ro.observe(el); });
+      }
+    })();
+  </script>
+</body>
+</html>
