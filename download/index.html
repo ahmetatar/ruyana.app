@@ -252,6 +252,16 @@
     }
     .cta-note .sep { opacity: 0.4; }
 
+    /* ---------- In-app browser fallback banner ---------- */
+    .iab-banner {
+      display: none; margin-top: 14px; padding: 12px 16px; border-radius: var(--r-md);
+      border: 1px solid color-mix(in srgb, var(--primary) 30%, transparent);
+      background: color-mix(in srgb, var(--primary) 8%, transparent);
+      color: var(--on-surface); font-size: 0.86rem; line-height: 1.5;
+    }
+    .iab-banner.is-visible { display: block; }
+    .iab-banner b { color: var(--primary); }
+
     .hero-meta { display: flex; flex-wrap: wrap; gap: 9px; margin-top: 22px; }
     .meta-pill {
       padding: 8px 13px; border-radius: var(--r-full);
@@ -361,6 +371,11 @@
           </span>
         </a>
 
+        <p class="iab-banner" id="iabBanner" role="status">
+          <span lang="tr">Buton bir şey açmıyorsa: sağ üstteki <b>⋯</b> menüsünden <b>“Safari’de Aç”</b>ı seç.</span>
+          <span lang="en">If the button doesn’t open anything: tap the <b>⋯</b> menu at the top right and choose <b>“Open in Safari.”</b></span>
+        </p>
+
         <p class="cta-note">
           <span lang="tr">Kayıt yok, hesap yok</span><span lang="en">No sign-up, no account</span>
           <span class="sep">·</span>
@@ -418,6 +433,16 @@
 
       var yearEl = document.getElementById("year");
       if (yearEl) yearEl.textContent = String(new Date().getFullYear());
+
+      /* Instagram's in-app browser intercepts apps.apple.com navigation on its
+         own native side (confirmed: the click fires with defaultPrevented=false,
+         it's simply cancelled after). "Open in Safari" from its ⋯ menu is the
+         one path that reliably works, so surface it when we detect that browser. */
+      var ua = navigator.userAgent || "";
+      if (/Instagram|FBAN|FBAV/i.test(ua)) {
+        var banner = document.getElementById("iabBanner");
+        if (banner) banner.classList.add("is-visible");
+      }
     })();
   </script>
 </body>
