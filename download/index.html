@@ -239,6 +239,10 @@
       box-shadow: 0 10px 26px rgba(176, 84, 62, 0.36);
     }
     .btn:active { transform: translateY(0) scale(0.99); }
+    /* A tap landing on a nested child (icon/span) doesn't reliably bubble to the
+       parent <a> in Instagram's in-app WebView — force every tap in the button's
+       box to hit the anchor itself. */
+    .btn * { pointer-events: none; }
     .btn .apple { width: 20px; height: 20px; flex: 0 0 auto; }
     .btn-sub { display: block; font-size: 0.72rem; font-weight: 500; opacity: 0.86; }
 
