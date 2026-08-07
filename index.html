@@ -546,7 +546,7 @@
             <span lang="en">This page explains how Ruyana handles information, the rights and choices users have, and the terms that apply when using the app. Your records and photos stay on your device and in your own private iCloud account.</span>
           </p>
           <div class="hero-meta">
-            <span class="meta-pill"><span lang="tr">Yürürlük tarihi:</span><span lang="en">Effective date:</span> <b>2026-06-30</b></span>
+            <span class="meta-pill"><span lang="tr">Yürürlük tarihi:</span><span lang="en">Effective date:</span> <b>2026-08-07</b></span>
             <span class="meta-pill"><span lang="tr">iPhone uygulaması için geçerlidir</span><span lang="en">Applies to the iPhone app</span></span>
           </div>
         </div>
@@ -587,6 +587,7 @@
           <ul>
             <li><span lang="tr">İçeriğin tamamı kullanıcının kendi girdiği bilgilerdir.</span><span lang="en">All content is information the user enters themselves.</span></li>
             <li><span lang="tr">Geliştiricinin sunucusu, kopyası veya çözme anahtarı yoktur.</span><span lang="en">The developer has no server, no copy, and no decryption key.</span></li>
+            <li><span lang="tr">Yüz verisi yalnızca cihazda, fotoğraf hizalama için işlenir; tanıma yapılmaz.</span><span lang="en">Face data is processed on-device for photo alignment only; no recognition.</span></li>
             <li><span lang="tr">Reklam, analitik veya üçüncü taraf takip SDK'sı kullanılmaz.</span><span lang="en">No ad, analytics, or third-party tracking SDKs are used.</span></li>
             <li><span lang="tr">Kişisel bilgilerin satışı söz konusu değildir.</span><span lang="en">There is no sale of personal information.</span></li>
           </ul>
@@ -656,11 +657,25 @@
 
           <h3 id="on-device">3. <span lang="tr">Cihaz üzerinde işleme</span><span lang="en">On-device processing</span> <a class="anchor" href="#on-device" aria-label="Link">#</a></h3>
           <p>
-            <span lang="tr">Fotoğraf hizalama ve poz/çerçeve eşleştirme gibi görüntü analizleri, Apple'ın Vision çerçevesi kullanılarak tamamen cihazınızda yapılır. Bu analiz fotoğraflarınızı cihazdan dışarı göndermez ve geliştiriciye iletmez.</span>
-            <span lang="en">Image analysis such as photo alignment and pose/frame matching is performed entirely on your device using Apple's Vision framework. This analysis does not send your photos off the device and does not transmit them to the developer.</span>
+            <span lang="tr">Fotoğraf hizalama ve poz/çerçeve eşleştirme gibi görüntü analizleri, Apple'ın Vision çerçevesi kullanılarak tamamen cihazınızda yapılır. Bu analiz fotoğraflarınızı cihazdan dışarı göndermez ve geliştiriciye iletmez. Yüz işaret noktalarının nasıl hesaplandığı, saklandığı ve silindiği için bkz. <a href="#face-data">4. Yüz verisi</a>.</span>
+            <span lang="en">Image analysis such as photo alignment and pose/frame matching is performed entirely on your device using Apple's Vision framework. This analysis does not send your photos off the device and does not transmit them to the developer. See <a href="#face-data">4. Face data</a> for how face landmarks are computed, stored, and deleted.</span>
           </p>
 
-          <h3 id="apple-services">4. <span lang="tr">iCloud ve Apple hizmetleri</span><span lang="en">iCloud and Apple services</span> <a class="anchor" href="#apple-services" aria-label="Link">#</a></h3>
+          <h3 id="face-data">4. <span lang="tr">Yüz verisi (fotoğraf hizalama)</span><span lang="en">Face data (photo alignment)</span> <a class="anchor" href="#face-data" aria-label="Link">#</a></h3>
+          <p>
+            <span lang="tr">Ruyana <b>yüz tanıma yapmaz</b> ve sizi yüzünüzden tanımlamaz. Çektiğiniz ilerleme fotoğraflarında, Apple'ın Vision çerçevesi ile <b>cihazınızda</b> yüz işaret noktaları hesaplanır: yaklaşık 76 nokta, fotoğrafa göre 0–1 aralığında normalize edilmiş x/y koordinatları ve tek bir sayısal poz uyum skoru. Yüz şablonu (faceprint), kimlik imzası veya biyometrik tanımlayıcı oluşturulmaz; bu veri hiçbir veri tabanıyla veya başka bir kişiyle karşılaştırılmaz.</span>
+            <span lang="en">Ruyana <b>does not perform face recognition</b> and does not identify you from your face. On the progress photos you capture, Apple's Vision framework computes face landmarks <b>on your device</b>: about 76 points, stored as x/y coordinates normalised to 0–1 relative to the photo, plus a single numeric pose-match score. No face template (faceprint), identity signature, or biometric identifier is created, and the data is never compared against any database or any other person.</span>
+          </p>
+          <ul>
+            <li><span lang="tr"><b>Kullanım amacı:</b> Tek amaç, bir sonraki çekimde aynı pozu yakalamanıza yardımcı olan hizalama kılavuzu ve öncesi–sonrası karşılaştırmanızın geçerli olup olmadığını gösteren poz uyum skorudur. Yüz verisi <b>kimlik doğrulama, reklam, pazarlama, kullanıcı hedefleme veya kullanım tabanlı veri madenciliği için kullanılmaz.</b></span><span lang="en"><b>Purpose of use:</b> The only purpose is the alignment guide that helps you reproduce the same pose in your next photo, and the pose-match score that tells you whether a before-and-after comparison is valid. Face data is <b>not used for authentication, advertising, marketing, user targeting, or usage-based data mining.</b></span></li>
+            <li><span lang="tr"><b>Canlı kamera önizlemesi:</b> Önizleme sırasında incelenen kareler yalnızca bellekte işlenir, hiçbir zaman diske yazılmaz ve anında atılır.</span><span lang="en"><b>Live camera preview:</b> Frames examined during preview are processed in memory only, are never written to disk, and are discarded immediately.</span></li>
+            <li><span lang="tr"><b>Saklama yeri:</b> Kaydettiğiniz bir fotoğrafta işaret noktası kümesi, o fotoğrafın kendi kaydının parçası olarak saklanır ve tam olarak fotoğraflarınızla aynı yerde durur: cihazınızda ve — senkronizasyon açıksa — Apple kimliğinize bağlı <b>özel</b> iCloud veritabanınızda. Geliştiricinin sunucusu yoktur; uygulama bu veriyi hiçbir sunucuya göndermez.</span><span lang="en"><b>Where it is stored:</b> For a photo you save, the landmark set is stored as part of that photo's own record and lives exactly where your photos live: on your device and — if sync is enabled — in your <b>private</b> iCloud database tied to your Apple ID. The developer operates no server; the app never transmits this data to any server.</span></li>
+            <li><span lang="tr"><b>Paylaşım:</b> Yüz verisi <b>hiçbir üçüncü tarafla paylaşılmaz</b>, satılmaz ve geliştirici dahil hiç kimse tarafından erişilemez. Uygulamada üçüncü taraf reklam, analitik veya takip SDK'sı bulunmaz. Dışa aktardığınız PDF veya yedek dosyaları yalnızca sizin seçtiğiniz kayıt ve fotoğrafları içerir; işaret noktası verisi içermez.</span><span lang="en"><b>Sharing:</b> Face data is <b>never shared with any third party</b>, never sold, and cannot be accessed by anyone, including the developer. The app contains no third-party advertising, analytics, or tracking SDKs. PDF or backup files you export contain only the records and photos you select; they do not contain landmark data.</span></li>
+            <li><span lang="tr"><b>Saklama süresi ve silme:</b> Süre tamamen sizin kontrolünüzdedir. İlgili fotoğrafı sildiğinizde işaret noktaları da silinir; "sıfırdan başla" tüm Ruyana verinizi iCloud kopyası dahil kalıcı ve geri alınamaz şekilde siler; uygulamayı silmek cihazdaki yerel kopyayı kaldırır. Geliştiricinin bir kopyası olmadığı için geliştirici tarafında herhangi bir saklama süresi yoktur.</span><span lang="en"><b>Retention and deletion:</b> Retention is entirely in your hands. Deleting a photo deletes its landmarks; "fresh start" permanently and irreversibly erases all of your Ruyana data including the iCloud copy; deleting the app removes the local copy on the device. Because the developer holds no copy, there is no developer-side retention period.</span></li>
+            <li><span lang="tr"><b>Face ID / Touch ID ayrıdır:</b> İsteğe bağlı uygulama kilidi Apple'ın LocalAuthentication çerçevesini kullanır; biyometrik veriniz Apple tarafından cihazda işlenir ve Ruyana onu hiç görmez veya saklamaz.</span><span lang="en"><b>Face ID / Touch ID is separate:</b> The optional app lock uses Apple's LocalAuthentication framework; your biometric data is handled on-device by Apple and Ruyana never sees or stores it.</span></li>
+          </ul>
+
+          <h3 id="apple-services">5. <span lang="tr">iCloud ve Apple hizmetleri</span><span lang="en">iCloud and Apple services</span> <a class="anchor" href="#apple-services" aria-label="Link">#</a></h3>
           <p>
             <span lang="tr">Ruyana; SwiftData, CloudKit/iCloud, StoreKit ve Bildirimler gibi Apple tarafından sağlanan çerçevelere dayanır. Senkronizasyon etkin olduğunda kayıtlarınız ve fotoğraflarınız, Apple kimliğinize bağlı <b>özel</b> iCloud veritabanınızda (sizin iCloud kotanıza sayılan CKAsset'ler olarak) saklanır. Bu, Apple'ın yönettiği bir alandır; geliştiricinin erişimi yoktur.</span>
             <span lang="en">Ruyana relies on Apple-provided frameworks such as SwiftData, CloudKit/iCloud, StoreKit, and Notifications. When sync is enabled, your records and photos are stored in your <b>private</b> iCloud database tied to your Apple ID (as CKAssets counted against your own iCloud quota). This is an Apple-managed space to which the developer has no access.</span>
@@ -670,7 +685,7 @@
             <span lang="en">Sync requires being signed in to iCloud. If you do not use iCloud, the app runs in local, on-device-only mode.</span>
           </p>
 
-          <h3 id="not-collected">5. <span lang="tr">Toplamadığımız bilgiler</span><span lang="en">What we do not collect</span> <a class="anchor" href="#not-collected" aria-label="Link">#</a></h3>
+          <h3 id="not-collected">6. <span lang="tr">Toplamadığımız bilgiler</span><span lang="en">What we do not collect</span> <a class="anchor" href="#not-collected" aria-label="Link">#</a></h3>
           <ul>
             <li><span lang="tr">Üçüncü taraf reklam SDK'ları — kullanılmaz.</span><span lang="en">Third-party advertising SDKs — none.</span></li>
             <li><span lang="tr">Üçüncü taraf analitik veya takip araçları — kullanılmaz.</span><span lang="en">Third-party analytics or tracking tools — none.</span></li>
@@ -678,13 +693,13 @@
             <li><span lang="tr">Kişisel bilgilerinizin satışı veya reklam ağlarıyla paylaşımı — yapılmaz.</span><span lang="en">Sale of your personal information, or sharing with ad networks — none.</span></li>
           </ul>
 
-          <h3 id="subscriptions-data">6. <span lang="tr">Abonelik ve satın almalar</span><span lang="en">Subscriptions and purchases</span> <a class="anchor" href="#subscriptions-data" aria-label="Link">#</a></h3>
+          <h3 id="subscriptions-data">7. <span lang="tr">Abonelik ve satın almalar</span><span lang="en">Subscriptions and purchases</span> <a class="anchor" href="#subscriptions-data" aria-label="Link">#</a></h3>
           <p>
             <span lang="tr">Satın alma, abonelik ve yetkilendirme durumu Apple'ın StoreKit sistemleri üzerinden yönetilir. Ruyana yalnızca premium erişiminizin etkin olup olmadığını görür; ödeme bilgilerinizi (kart, fatura adresi vb.) almaz veya saklamaz — bunlar Apple tarafından işlenir.</span>
             <span lang="en">Purchases, subscriptions, and entitlement status are managed through Apple's StoreKit systems. Ruyana only sees whether your premium access is active; it does not receive or store your payment details (card, billing address, etc.) — those are handled by Apple.</span>
           </p>
 
-          <h3 id="retention">7. <span lang="tr">Saklama ve sizin kontrolünüz</span><span lang="en">Retention and your control</span> <a class="anchor" href="#retention" aria-label="Link">#</a></h3>
+          <h3 id="retention">8. <span lang="tr">Saklama ve sizin kontrolünüz</span><span lang="en">Retention and your control</span> <a class="anchor" href="#retention" aria-label="Link">#</a></h3>
           <ul>
             <li><span lang="tr">Kayıtlarınız siz silene kadar cihazınızda ve özel iCloud hesabınızda kalır.</span><span lang="en">Your records remain on your device and in your private iCloud account until you delete them.</span></li>
             <li><span lang="tr">Uygulama içinde tek tek kayıt silebilir; "sıfırdan başla" ile bu iCloud hesabındaki tüm Ruyana verinizi kalıcı ve geri alınamaz şekilde silebilirsiniz.</span><span lang="en">You can delete individual records in the app, or use "fresh start" to permanently and irreversibly erase all your Ruyana data from that iCloud account.</span></li>
@@ -692,25 +707,25 @@
             <li><span lang="tr">Verilerinizi şifreli bir yedek olarak Dosyalar (Files) uygulamasına dışa aktarabilirsiniz.</span><span lang="en">You can export your data as an encrypted backup to the Files app.</span></li>
           </ul>
 
-          <h3 id="rights">8. <span lang="tr">Haklarınız (KVKK / GDPR)</span><span lang="en">Your rights (KVKK / GDPR)</span> <a class="anchor" href="#rights" aria-label="Link">#</a></h3>
+          <h3 id="rights">9. <span lang="tr">Haklarınız (KVKK / GDPR)</span><span lang="en">Your rights (KVKK / GDPR)</span> <a class="anchor" href="#rights" aria-label="Link">#</a></h3>
           <p>
             <span lang="tr">6698 sayılı KVKK (Türkiye) ve GDPR (AB) kapsamında erişim, düzeltme, silme, işlemeyi kısıtlama, taşınabilirlik ve itiraz haklarına sahipsiniz. Ruyana'nın mimarisi gereği verileriniz zaten yalnızca sizin kontrolünüzdedir: uygulama içinden her zaman görüntüleyebilir, düzenleyebilir, dışa aktarabilir ve kalıcı olarak silebilirsiniz. Geliştiricinin verilerinize erişimi olmadığından, çoğu talep doğrudan uygulama içinden anında yerine getirilir. Yine de bu sayfadaki iletişim adresine yazarak haklarınıza ilişkin başvuruda bulunabilirsiniz.</span>
             <span lang="en">Under KVKK (Turkey, Law No. 6698) and GDPR (EU) you have rights of access, rectification, erasure, restriction of processing, portability, and objection. By Ruyana's architecture, your data is already under your sole control: you can view, edit, export, and permanently delete it from within the app at any time. Because the developer has no access to your data, most requests are fulfilled instantly from within the app. You may still contact the address on this page regarding your rights.</span>
           </p>
 
-          <h3 id="children">9. <span lang="tr">Çocuklar</span><span lang="en">Children</span> <a class="anchor" href="#children" aria-label="Link">#</a></h3>
+          <h3 id="children">10. <span lang="tr">Çocuklar</span><span lang="en">Children</span> <a class="anchor" href="#children" aria-label="Link">#</a></h3>
           <p>
             <span lang="tr">Ruyana, App Store listelemesinde aksi açıkça belirtilmedikçe, bulunduğu ülkede geçerli yasaların geçerli rıza için gerektirdiği asgari yaşın altındaki çocuklara yönelik değildir.</span>
             <span lang="en">Ruyana is not intended for children under the minimum age required by applicable law to provide valid consent in their jurisdiction, unless the App Store listing clearly states otherwise.</span>
           </p>
 
-          <h3 id="international">10. <span lang="tr">Uluslararası kullanım</span><span lang="en">International use</span> <a class="anchor" href="#international" aria-label="Link">#</a></h3>
+          <h3 id="international">11. <span lang="tr">Uluslararası kullanım</span><span lang="en">International use</span> <a class="anchor" href="#international" aria-label="Link">#</a></h3>
           <p>
             <span lang="tr">Konumunuza, cihaz ayarlarınıza ve Apple altyapısına bağlı olarak, iCloud üzerinden senkronlanan veriler ikamet ettiğiniz ülke dışındaki ülkelerde Apple tarafından işlenebilir veya saklanabilir. Bu aktarımlar Apple'ın koşullarına tabidir.</span>
             <span lang="en">Depending on your location, device settings, and Apple infrastructure, data synced via iCloud may be processed or stored by Apple in countries other than the one where you reside. Such transfers are subject to Apple's terms.</span>
           </p>
 
-          <h3 id="changes">11. <span lang="tr">Bu politikadaki değişiklikler</span><span lang="en">Changes to this policy</span> <a class="anchor" href="#changes" aria-label="Link">#</a></h3>
+          <h3 id="changes">12. <span lang="tr">Bu politikadaki değişiklikler</span><span lang="en">Changes to this policy</span> <a class="anchor" href="#changes" aria-label="Link">#</a></h3>
           <p>
             <span lang="tr">Bu Gizlilik Politikası zaman zaman güncellenebilir. Güncel sürüm, uygun olduğunda revize edilmiş bir yürürlük tarihiyle bu sayfada yayımlanır.</span>
             <span lang="en">This Privacy Policy may be updated from time to time. The updated version will be posted on this page with a revised effective date when applicable.</span>
