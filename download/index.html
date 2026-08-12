@@ -19,6 +19,11 @@
 
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%23B0543E'/%3E%3Cstop offset='1' stop-color='%23D99A5B'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='32' height='32' rx='9' fill='%23FAF3EA'/%3E%3Ccircle cx='16' cy='16' r='8.5' fill='url(%23g)'/%3E%3Ccircle cx='13' cy='13' r='2.2' fill='%23FFF8F2' opacity='0.85'/%3E%3C/svg%3E">
 
+  <!-- Umami: cookieless, no personal data, no cross-site tracking. Site analytics only;
+       the iOS app itself still collects nothing (App Store label: Data Not Collected). -->
+  <script defer src="https://cloud.umami.is/script.js"
+          data-website-id="ea0c43a7-f9c8-4db8-b933-430589dc6a42"></script>
+
   <!-- Set language before paint to avoid a flash of both languages -->
   <script>
     (function () {
@@ -351,7 +356,7 @@
              bare WKWebView with no window.open delegate, so target=_blank taps are silently
              swallowed. Same-tab navigation to the already-resolved (redirect-free) App Store
              URL is what it can actually handle. -->
-        <a class="btn" href="https://apps.apple.com/us/app/ruyana-botox-filler-diary/id6782154031">
+        <a class="btn" id="cta-appstore" href="https://apps.apple.com/us/app/ruyana-botox-filler-diary/id6782154031">
           <svg class="apple" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
             <path d="M16.365 1.43c0 1.14-.42 2.2-1.13 3.02-.85.98-2.24 1.74-3.4 1.65-.14-1.1.42-2.27 1.1-3.02.79-.88 2.24-1.6 3.43-1.65zM20.7 17.1c-.6 1.38-.88 2-1.65 3.22-1.07 1.7-2.58 3.82-4.45 3.83-1.66.02-2.09-1.08-4.35-1.07-2.26.01-2.73 1.09-4.39 1.07-1.87-.02-3.3-1.93-4.37-3.63C-1.5 16.79-1.82 11.2.4 8.24c1.13-1.52 2.9-2.48 4.57-2.48 1.7 0 2.77 1.09 4.18 1.09 1.36 0 2.19-1.09 4.16-1.09 1.48 0 3.05.8 4.17 2.19-3.66 2-3.07 7.22.22 9.15z"/>
           </svg>
@@ -418,6 +423,45 @@
 
       var yearEl = document.getElementById("year");
       if (yearEl) yearEl.textContent = String(new Date().getFullYear());
+
+      /* Analytics events. The pageview is sent by the Umami script itself.
+         The CTA is deliberately NOT intercepted: Instagram's in-app WKWebView only
+         handles a plain same-tab navigation, so we listen on pointerdown/click and
+         let the default action through untouched. */
+      var clicked = false;
+      var landedAt = Date.now();
+
+      function track(name, data) {
+        try { if (window.umami) window.umami.track(name, data); } catch (e) {}
+      }
+
+      function trackClick() {
+        if (clicked) return;
+        clicked = true;
+        track("download-click", { lang: root.getAttribute("data-lang") });
+      }
+
+      var cta = document.getElementById("cta-appstore");
+      if (cta) {
+        cta.addEventListener("pointerdown", trackClick);
+        cta.addEventListener("click", trackClick); /* keyboard activation */
+      }
+
+      /* Leaving the page: did they convert, and how long did they stay? */
+      var exited = false;
+      function trackExit() {
+        if (exited) return;
+        exited = true;
+        track("page-exit", {
+          converted: clicked ? "yes" : "no",
+          seconds: Math.round((Date.now() - landedAt) / 1000),
+          lang: root.getAttribute("data-lang")
+        });
+      }
+      document.addEventListener("visibilitychange", function () {
+        if (document.visibilityState === "hidden") trackExit();
+      });
+      window.addEventListener("pagehide", trackExit);
     })();
   </script>
 </body>
