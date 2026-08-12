@@ -252,83 +252,6 @@
     }
     .cta-note .sep { opacity: 0.4; }
 
-    /* ---------- In-app browser fallback banner ----------
-       This is the ONLY working path out of Instagram's WebView, so it has to
-       out-shout the CTA it sits under: arrow pointing at the real ⋯ menu,
-       breathing border, numbered steps. Hidden until that browser is detected. */
-    .iab-banner { display: none; }
-    .iab-banner.is-visible {
-      display: block; position: relative;
-      margin-top: 18px; padding: 15px 17px 16px;
-      border-radius: var(--r-md);
-      border: 1.5px solid var(--primary);
-      background:
-        linear-gradient(135deg,
-          color-mix(in srgb, var(--champagne) 22%, transparent) 0%,
-          color-mix(in srgb, var(--primary) 10%, transparent) 100%),
-        var(--surface-elevated);
-      color: var(--on-surface); font-size: 0.9rem; line-height: 1.55;
-      box-shadow: var(--shadow-card);
-      animation: iab-in 520ms var(--ease) both, iab-breathe 2.6s ease-in-out 620ms infinite;
-    }
-    /* Notch pointing up-and-right, toward the browser's own ⋯ button */
-    .iab-banner.is-visible::before {
-      content: ""; position: absolute; top: -8px; right: 22px;
-      width: 14px; height: 14px; transform: rotate(45deg);
-      background: color-mix(in srgb, var(--champagne) 22%, var(--surface-elevated));
-      border-left: 1.5px solid var(--primary); border-top: 1.5px solid var(--primary);
-      border-radius: 3px 0 0 0;
-    }
-
-    .iab-head {
-      display: flex; align-items: center; gap: 9px;
-      font: 700 0.98rem var(--sans); letter-spacing: -0.01em;
-      color: var(--primary); margin-bottom: 6px;
-    }
-    .iab-head .iab-arrow {
-      flex: 0 0 auto; width: 19px; height: 19px;
-      animation: iab-point 1.5s ease-in-out infinite;
-    }
-    .iab-body { margin: 0; color: var(--on-surface); }
-
-    .iab-steps {
-      list-style: none; counter-reset: iab; display: flex; flex-wrap: wrap;
-      gap: 7px; margin: 11px 0 0; padding: 0;
-    }
-    .iab-steps li {
-      counter-increment: iab;
-      display: flex; align-items: center; gap: 7px;
-      padding: 6px 12px 6px 7px; border-radius: var(--r-full);
-      border: 1px solid color-mix(in srgb, var(--primary) 28%, transparent);
-      background: var(--surface);
-      font-size: 0.83rem; font-weight: 600; line-height: 1.3;
-    }
-    .iab-steps li::before {
-      content: counter(iab);
-      flex: 0 0 auto; width: 20px; height: 20px; border-radius: var(--r-full);
-      display: grid; place-items: center;
-      background: var(--grad-brand); color: var(--on-primary);
-      font: 700 0.72rem var(--mono);
-    }
-    .iab-key {
-      display: inline-block; padding: 0 6px; border-radius: 6px;
-      border: 1px solid var(--border); background: var(--surface-elevated);
-      font-family: var(--mono); font-weight: 700; color: var(--primary);
-    }
-
-    @keyframes iab-in {
-      from { opacity: 0; transform: translateY(-6px); }
-      to   { opacity: 1; transform: none; }
-    }
-    @keyframes iab-breathe {
-      0%, 100% { box-shadow: var(--shadow-card); }
-      50%      { box-shadow: 0 0 0 4px color-mix(in srgb, var(--primary) 15%, transparent), var(--shadow-card); }
-    }
-    @keyframes iab-point {
-      0%, 100% { transform: translate(0, 0); }
-      50%      { transform: translate(3px, -3px); }
-    }
-
     .hero-meta { display: flex; flex-wrap: wrap; gap: 9px; margin-top: 22px; }
     .meta-pill {
       padding: 8px 13px; border-radius: var(--r-full);
@@ -438,27 +361,6 @@
           </span>
         </a>
 
-        <div class="iab-banner" id="iabBanner" role="status">
-          <div lang="tr">
-            <p class="iab-head"><svg class="iab-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7"/><path d="M9 7h8v8"/></svg>Buton hiçbir şey açmadı mı?</p>
-            <p class="iab-body">Instagram’ın kendi tarayıcısı App Store bağlantısını engelliyor. Sayfayı Safari’de açtığında indirme sorunsuz çalışır:</p>
-            <ol class="iab-steps">
-              <li>Sağ üstteki <span class="iab-key">⋯</span></li>
-              <li>Tarayıcıda aç</li>
-              <li>Yeniden indir’e bas</li>
-            </ol>
-          </div>
-          <div lang="en">
-            <p class="iab-head"><svg class="iab-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7"/><path d="M9 7h8v8"/></svg>Did the button do nothing?</p>
-            <p class="iab-body">Instagram’s in-app browser blocks App Store links. Open this page in Safari and the download works right away:</p>
-            <ol class="iab-steps">
-              <li>Tap <span class="iab-key">⋯</span> at the top right</li>
-              <li>Open in browser</li>
-              <li>Hit download again</li>
-            </ol>
-          </div>
-        </div>
-
         <p class="cta-note">
           <span lang="tr">Kayıt yok, hesap yok</span><span lang="en">No sign-up, no account</span>
           <span class="sep">·</span>
@@ -516,16 +418,6 @@
 
       var yearEl = document.getElementById("year");
       if (yearEl) yearEl.textContent = String(new Date().getFullYear());
-
-      /* Instagram's in-app browser intercepts apps.apple.com navigation on its
-         own native side (confirmed: the click fires with defaultPrevented=false,
-         it's simply cancelled after). "Open in Safari" from its ⋯ menu is the
-         one path that reliably works, so surface it when we detect that browser. */
-      var ua = navigator.userAgent || "";
-      if (/Instagram|FBAN|FBAV/i.test(ua)) {
-        var banner = document.getElementById("iabBanner");
-        if (banner) banner.classList.add("is-visible");
-      }
     })();
   </script>
 </body>
